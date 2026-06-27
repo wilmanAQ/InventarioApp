@@ -22,8 +22,12 @@ Console.WriteLine();
 Console.WriteLine("Estado: Proyecto inicializado");
 
 Console.WriteLine("Estructura del proyecto:");
-Console.WriteLine("Configuración .csproj");
-Console.WriteLine("Carpetas scr/ creada");
-Console.WriteLine("Metadatos de inicialización implementados");
+Console.WriteLine("  InventarioApp/");
+Console.WriteLine("    ├── Program.cs");
+Console.WriteLine("    ├── inventarioApp.csproj");
+Console.WriteLine("    └── .gitignore");
+Console.WriteLine("    └── README.md");
+Console.WriteLine("    └── src/ ");
+Console.WriteLine("     └── Modulos/ (Proxima claese)");
 Console.WriteLine();
-Console.WriteLine("Proxiomo paso: Agregar argumentos CLI y configuración de repositorio en Github");
+Console.WriteLine("Proxiomo paso: Agregar Checkpoint");
