@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 
     <AssemblyName>inventarioApp</AssemblyName> 
-    <RootNamespace>inventarioApp</RootNamespace> //la línea de código que define el espacio de nombres raíz del proyecto
+    <RootNamespace>inventarioApp</RootNamespace> 
     <Version>1.0.0.0</Version> 
     <Description> Sistema de gestión de inventario con .NET </Description> 
   </PropertyGroup>
