@@ -32,7 +32,47 @@ if (args.Length > 0)
     }      
 }
 
-MostrarBanner();
+int cantidadProductos = 0;
+decimal totalValorInventario = 0.0m;
+bool sistemaActivo = true;
+string nombreSistema = "Sistema de Gestión de Inventario";
+decimal precio =  19.98m;
+
+Console.WriteLine("Estado del sistema");
+Console.WriteLine($" Nombre: {nombreSistema}!");
+Console.WriteLine($" Productos registrados: {cantidadProductos}");
+Console.WriteLine($" Valor total del inventario: {totalValorInventario:N2}");
+Console.WriteLine($" Sistema activo: {(sistemaActivo ? "Sí" : "No")} ");
+
+Console.WriteLine("Ingrese una cantidad:");
+string? entradaCantidad = Console.ReadLine();
+
+// Conversion segura TryParse
+if (int.TryParse(entradaCantidad, out int cantidad))
+{
+    Console.Write($"Cantidad valida: {cantidad}\n");
+}
+else
+{
+    Console.WriteLine("Error: La entrada no es un número entero.");
+}
+
+Console.WriteLine("Ingrese un precio:");
+string? entradaPrecio = Console.ReadLine();
+
+// Conversion segura TryParse
+if (decimal.TryParse(entradaPrecio, out decimal precio2))
+{
+    Console.Write($"Precio ingresado: {precio2:N2}\n");
+    totalValorInventario = cantidad * precio2;
+    Console.WriteLine($"Valor total del inventario: {totalValorInventario:N2}");
+}
+else
+{
+    Console.WriteLine("Error: La entrada no es un número válido.");
+}
+//MostrarBanner();
+
 // Modo interativo
 Console.WriteLine("Ingrese un comando (o 'salir' para terminar):");
 string? entrada = Console.ReadLine(); // STDIN para leer la entrada del usuario
