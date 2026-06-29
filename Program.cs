@@ -26,23 +26,25 @@ if (args.Length > 0)
             Console.WriteLine($"Error: Comando desconocido: '{args[0]}'");
             Console.WriteLine($"Use '--help' para ver la lista de comandos disponibles.");
             MostrarAyuda();
-            Environment.Exit(1);
+            Environment.Exit(2);
              break;
     
     }      
 }
 
-Console.WriteLine("==========================================");
-Console.WriteLine("    SISTEMA DE GESTIÓN DE INVENTARIO      ");
-Console.WriteLine("==========================================");
-Console.WriteLine();
-Console.WriteLine($"Versión del ensamblado: {version}");
-Console.WriteLine($"Versión: 1.0.0");
-Console.WriteLine($"Plataforma: {Environment.OSVersion}");
-Console.WriteLine($".NET Version: {Environment.Version}");
-Console.WriteLine();
-Console.WriteLine("Estado: Proyecto inicializado");
+MostrarBanner();
+// Modo interativo
+Console.WriteLine("Ingrese un comando (o 'salir' para terminar):");
+string? entrada = Console.ReadLine(); // STDIN para leer la entrada del usuario
 
+if(string.IsNullOrWhiteSpace(entrada) || entrada.ToLower() == "salir")
+{
+    Console.WriteLine("No se ingresó ningún comando. Saliendo del programa."); //STDOut para mostrar mensaje de salida
+    Environment.Exit(0);
+}
+
+
+/*
 Console.WriteLine("Estructura del proyecto:");
 Console.WriteLine("  InventarioApp/");
 Console.WriteLine("    ├── Program.cs");
@@ -53,6 +55,18 @@ Console.WriteLine("    └── src/ ");
 Console.WriteLine("     └── Modulos/ (Proxima claese)");
 Console.WriteLine();
 Console.WriteLine("Proxiomo paso: Agregar Checkpoint");
+*/
+void MostrarBanner()
+{
+    Console.WriteLine("╔══════════════════════════════════════╗");
+    Console.WriteLine("║   SISTEMA DE GESTIÓN DE INVENTARIO   ║");
+    Console.WriteLine("╚══════════════════════════════════════╝");
+    Console.WriteLine();
+    Console.WriteLine($"Versión: {version}");
+    Console.WriteLine($".NET: {Environment.Version}");
+    Console.WriteLine($"Sistema: {Environment.OSVersion.Platform}");
+    Console.WriteLine();
+}
 
 void MostrarAyuda()
 {
